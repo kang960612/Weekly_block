@@ -1,34 +1,38 @@
 int xPos = width / 2;
 int yPos = height / 2;
 
-int radius = 10;
+int radius = 50;
 
-int xDir = -1;
-int yDir = -1;
-int ball_speed = 3;
+
+
+//공이 이동하는데 필요한 변수 선언
+int xDir = -1; //공이 x축으로 움직이는데 음수방향으로 움직이겠다. 1이면 양수방향으로 움직이겠다.
+int yDir = -1; //공이 y축으로 움직이는데 음수방향으로 움직이겠다. 1이면 양수방향으로 움직이겠다.
+int ball_speed = 3; //공의 속도를 3으로 하겠다.
+
+
 
 void setup(){
 
   size(640, 480);
-  
+
 }
 
 void draw(){
 
   background(0);
   fill(255, 255, 0);
-  ellipse(xPos, yPos, radius*2, radius*2);
-  
-  fill(255);
-  rect(mouseX, height-10, 100, 10); //패들을 그려주는 기능
+  ellipse(xPos, yPos, radius*2, radius*2); 
   
   
-  xPos += (xDir * ball_speed);
-  yPos += (yDir * ball_speed);
-  
+  xPos += (xDir * ball_speed); // xPos = xPos + (xDir * ball_speed), x좌표의 위치를 위에서 선언해준 방향과 속도로 움직이겠다.
+  yPos += (yDir * ball_speed); // yPos = yPos + (yDir * ball_speed), y좌표의 위치를 위에서 선언해준 방향과 속도로 움직이겠다.
   
   if(xPos < radius || xPos > width-radius) xDir *= -1;
-  //if(yPos < radius || yPos > height-radius) yDir *= -1;
-  if(yPos < radius || yPos > height-(radius+10) && xPos <= mouseX+100 && xPos >= mouseX) yDir *= -1; //공이 패들과 부딪혔을 때 공의 방향을 바꿔주는 기능
-
+  //xPos < radius: 공이 왼쪽 벽에 부딪히면, xPos > width-radius: 공이 오른쪽 벽에 부딪히면
+  //xDir *= -1  --> xDir = xDir * -1 공의 x축에 대한 방향을 반대 방향으로 바꿔주겠다.
+  
+  if(yPos < radius || yPos > height-radius) yDir *= -1;
+  //yPos < radius: 공이 위쪽 벽에 부딪히면, yPos > height-radius: 공이 아래쪽 벽에 부딪히면
+  //yDir *= -1  --> yDir = yDir * -1 공의 y축에 대한 방향을 반대 방향으로 바꿔주겠다.
 }
