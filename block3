@@ -22,7 +22,7 @@ void draw(){
 
   background(0);
   fill(255, 255, 0);
-  ellipse(xPos, yPos, radius*2, radius*2)  
+  ellipse(xPos, yPos, radius*2, radius*2); 
   
   
   xPos += (xDir * ball_speed); // xPos = xPos + (xDir * ball_speed), x좌표의 위치를 위에서 선언해준 방향과 속도로 움직이겠다.
