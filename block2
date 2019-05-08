@@ -19,7 +19,7 @@ void draw(){
 
   fill(255, 255, 0); //fill(r, g, b) 색을 칠해주는 기능
 
-  ellipse(xPos, yPos, radius*2, radius*2)  // 원을 그려주는데 x좌표를 위에서 변수로 선언한 xPos, y좌표를 yPos
-                                           // 가로길이를 반지름 radiusX2, 세로길이를 radiusX2로 하겠다.
+  ellipse(xPos, yPos, radius*2, radius*2);  // 원을 그려주는데 x좌표를 위에서 변수로 선언한 xPos, y좌표를 yPos
+                                            // 가로길이를 반지름 radiusX2, 세로길이를 radiusX2로 하겠다.
 
 }
