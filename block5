@@ -1,0 +1,34 @@
+int xPos = width / 2;
+int yPos = height / 2;
+
+int radius = 10;
+
+int xDir = -1;
+int yDir = -1;
+int ball_speed = 3;
+
+void setup(){
+
+  size(640, 480);
+  
+}
+
+void draw(){
+
+  background(0);
+  fill(255, 255, 0);
+  ellipse(xPos, yPos, radius*2, radius*2);
+  
+  fill(255);
+  rect(mouseX, height-10, 100, 10); //패들을 그려주는 기능
+  
+  
+  xPos += (xDir * ball_speed);
+  yPos += (yDir * ball_speed);
+  
+  
+  if(xPos < radius || xPos > width-radius) xDir *= -1;
+  //if(yPos < radius || yPos > height-radius) yDir *= -1;
+  if(yPos < radius || yPos > height-(radius+10) && xPos <= mouseX+100 && xPos >= mouseX) yDir *= -1; //공이 패들과 부딪혔을 때 공의 방향을 바꿔주는 기능
+
+}
