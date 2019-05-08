@@ -1,0 +1,25 @@
+//그려줄 공의 중심에 대한 x좌표 y좌표 변수 선언
+int xPos = width / 2; //공의 중심에 대한 x좌표를 width(size함수로 그려준 창의 가로 길이)/2 즉, 가로의 중앙으로 하겠다
+int yPos = height / 2; //공의 중심에 대한 y좌표를 height(size함수로 그려준 창의 세로 길이)/2 즉, 세로의 중앙으로 하겠다
+
+//공의 반지름 변수 선언
+int radius = 50; //공의 반지름을 10으로 하겠다
+
+void setup(){
+
+  size(640, 480);
+  
+}
+
+
+
+void draw(){
+
+  background(0); //배경색을 검은색으로 만들어주는 기능
+
+  fill(255, 255, 0); //fill(r, g, b) 색을 칠해주는 기능
+
+  ellipse(xPos, yPos, radius*2, radius*2)  // 원을 그려주는데 x좌표를 위에서 변수로 선언한 xPos, y좌표를 yPos
+                                           // 가로길이를 반지름 radiusX2, 세로길이를 radiusX2로 하겠다.
+
+}
